@@ -1,0 +1,194 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.page-header {
+  text-align: center;
+}
+
+.table {
+  margin: auto;
+  width: 100%;
+}
+
+.table tr th:nth-child(1) {
+  width: 15%;
+}
+
+.table tr th:nth-child(3) {
+  width: 15%;
+}
+
+.table tr th:nth-child(2) {
+  width: 50%;
+  word-wrap: break-word;
+}
+
+.table tr td {
+  margin-bottom: 10px;
+}
+
+.table tr th:nth-child(4),
+.table tr th:nth-child(5) {
+  width: 10%;
+}
+
+.table tr td {
+  text-align: center;
+}
+
+.btn {
+  vertical-align: middle;
+  color: #fff;
+  text-decoration: none;
+}
+
+.pull-right {
+  display: block;
+  height: 30px;
+  width: 100px;
+  background: forestgreen;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.post-button {
+  margin: 30px auto;
+}
+
+.form-group input {
+  width: 80%;
+  word-wrap: break-word;
+}
+
+.new-post,
+.update-form {
+  text-align: center;
+}
+
+.offset-md-4 {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-primary {
+  background-color: green;
+  margin: 30px auto;
+}
+
+.login-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card-header {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.col-md-6 {
+  margin-bottom: 1rem;
+}
+
+.btn-danger {
+  background-color: red;
+  display: block;
+  width: 80%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.btn-update {
+  display: block;
+  background-color: green;
+  width: 80%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  margin: 50px 0;
+}
+
+small {
+  text-align: center;
+}
+
+.nav-item {
+  list-style: none;
+  text-align: end;
+}
+
+.nav-2 {
+  margin: 10px 0;
+}
+
+.dropdown-menu {
+  margin: 10px 0;
+}
+
+a {
+  /* text-decoration: none; */
+  color: black;
+}
+
+.navbar-brand {
+  text-decoration: none;
+}
+
+.col-md-4 {
+  text-align: center;
+}
+
+.form-group {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.card-header {
+  text-align: center;
+}
+
+.table-hover {
+  background: #F3FFD8;
+}
+
+.s-error {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #000080;
+}
+
+.error {
+  color: #FF0000;
+}
+
+.s-form {
+  margin-right: 0;
+  margin-left: auto;
+  width: 40%;
+}
+
+.s-form form {
+  width: 100%;
+  display: flex;
+}
+
+.s-text {
+  width: 80%;
+}
+
+.s-button {
+  width: 20%;
+}
+
+.back {
+  text-align: right;
+}
+
+.bt-index {
+  color: black;
+  font-size: 1.25rem;
+}
