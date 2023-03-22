@@ -13,11 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','PostsController@index');
 
-// Route::get('index','PostsController@index');
+
 Route::get('index/{sPost?}','PostsController@index')->name('posts.index');
 
 Route::get('/create-form','PostsController@createForm');
@@ -28,8 +26,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('/login' ,'RegisterController@');
-//  ↑にログイン画面へのルーティングを書く
+
 
 Route::get('post/{id}/update-form','PostsController@updateForm');
 
