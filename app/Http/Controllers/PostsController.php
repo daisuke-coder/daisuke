@@ -48,18 +48,33 @@ class PostsController extends Controller
         $post = $request->input('newPost');
         $name = $request->input('newName');
         $errormessage="※100文字以内で入力してください";
+        $emptymessage="※入力してください。";
 
-        if(100 < mb_strlen($post)){
+        if(mb_strlen(trim($post))===0 || mb_strlen(trim($post,"　"))===0){
+            return view('posts.createForm',compact('emptymessage'));
+        }
+        if(mb_strlen($post)>100){
             return view('posts.createForm',compact('errormessage'));
         }
-
         else{
-        DB::table('posts')->insert([
-            'post'=>$post,
-            'name'=>$name
-        ]);
-        return redirect('/index');
+            DB::table('posts')->insert([
+                'post'=>$post,
+                'name'=>$name
+            ]);
+            return redirect('index');
         }
+
+        // if(100 < mb_strlen($post)){
+        //     return view('posts.createForm',compact('errormessage'));
+        // }
+
+        // else{
+        // DB::table('posts')->insert([
+        //     'post'=>$post,
+        //     'name'=>$name
+        // ]);
+        // return redirect('/index');
+        // }
     }
 
     public function username()
@@ -86,23 +101,34 @@ class PostsController extends Controller
         $id= $request->input('id');
         $up_post=$request->input('upPost');
         $errormessage="※100文字以内で入力してください";
+        $emptymessage="※入力してください。";
         $post= DB::table('posts')
         ->where('id',$id)
         ->first();
-
-        if(100 < mb_strlen($up_post)){
-            return view('posts.updateForm',compact('errormessage','id','up_post','post'));
-        }
-
-        else{
-        DB::table('posts')
-        ->where('id',$id)
-        ->update(
-            ['post'=>$up_post]
-        );
-        return redirect('/index');
+        if(mb_strlen(trim($up_post))===0 || mb_strlen(trim($up_post,"　"))===0){
+            return view('posts.updateForm',compact('emptymessage','id','up_post','post'));
+        } elseif(mb_strlen($up_post)>100){
+            return view('posts.updateForm',compact('errormessage', 'id', 'up_post', 'post'));
+        } else{
+            DB::table('posts')
+            ->where('id',$id)
+            ->update(['post'=>$up_post]);
+            return redirect('/index');
         }
     }
+        // if(100 < mb_strlen($up_post)){
+        //     return view('posts.updateForm',compact('errormessage','id','up_post','post'));
+        // }
+
+        // else{
+        // DB::table('posts')
+        // ->where('id',$id)
+        // ->update(
+        //     ['post'=>$up_post]
+        // );
+        // return redirect('/index');
+        // }
+
     public function delete($id)
     {
         DB::table('posts')
