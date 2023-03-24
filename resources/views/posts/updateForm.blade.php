@@ -6,9 +6,12 @@
   {!! Form::open(['url'=>'/post/update']) !!}
   <div class="form-group">
     {!! Form::hidden('id',$post->id) !!}
-    {!! Form::input('text','upPost',$post->post,['required','class'=>'form-control']) !!}
+    {!! Form::input('text','upPost',$post->contents,['required','class'=>'form-control']) !!}
     @if(isset($errormessage))
     <p class="error">{{$errormessage}}</p>
+    @endif
+    @if(isset($emptymessage))
+    <p class="error">{{$emptymessage}}</p>
     @endif
   </div>
   <button type="submit" class="btn btn-primary pull-right">更新</button>
