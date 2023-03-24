@@ -25,16 +25,16 @@
       </tr>
       @foreach($list as $list)
       <tr>
-        <td>{{$list->name}}</td>
-        <td>{{$list->post}}</td>
+        <td>{{$list->user_name}}</td>
+        <td>{{$list->contents}}</td>
         <td>{{$list->created_at}}</td>
         <td>
-          @if ($authUser == $list->name)
+          @if ($authUser == $list->user_name)
           <a href="/post/{{$list->id}}/update-form" class="btn btn-update">編集</a>
           @endif
         </td>
         <td>
-          @if($authUser==$list->name)
+          @if($authUser==$list->user_name)
           <a href="/post/{{$list->id}}/delete" class="btn btn-danger" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか')">削除</a>
           @endif
         </td>
