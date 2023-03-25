@@ -21,7 +21,7 @@ class PostsController extends Controller
             $sPost=str_replace('　', ' ',$sPost);
             // ↑全角スペースを半角に変換
             $list=DB::table('posts')
-            ->where('post', 'like' , '%' .$sPost. '%')
+            ->where('contents', 'like' , '%' .$sPost. '%')
             ->get();
 
             if($sPost==" "){
@@ -58,8 +58,8 @@ class PostsController extends Controller
         }
         else{
             DB::table('posts')->insert([
-                'post'=>$post,
-                'name'=>$name
+                'contents'=>$post,
+                'user_name'=>$name
             ]);
             return redirect('index');
         }
@@ -112,7 +112,7 @@ class PostsController extends Controller
         } else{
             DB::table('posts')
             ->where('id',$id)
-            ->update(['post'=>$up_post]);
+            ->update(['contents'=>$up_post]);
             return redirect('/index');
         }
     }
